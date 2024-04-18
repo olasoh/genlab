@@ -19,6 +19,19 @@
               deploymentId: '3097baf1-380d-49dd-8c75-56fef2544b0f'
             });
           </script>
+          <script type="text/javascript" charset="utf-8">
+            Genesys("subscribe", "Journey.ready", function() {
+              // track forms
+              Genesys("command", "Journey.formsTrack", {});
+          
+              // track user inactivity
+              Genesys("command", "Journey.trackIdleEvents", { idleEvents: [{ idleAfterSeconds: 60, eventName: "idle_1_minute" }] });
+          
+              // track scroll depth
+              Genesys("command", "Journey.trackScrollDepth", { scrollDepthEvents: [{ percentage: 50, eventName: "scrolled_50_percent" }] });
+            });
+          </script>
+          
     </head>
 
     <body>
