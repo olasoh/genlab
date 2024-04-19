@@ -29,6 +29,20 @@
           
               // track scroll depth
               Genesys("command", "Journey.trackScrollDepth", { scrollDepthEvents: [{ percentage: 50, eventName: "scrolled_50_percent" }] });
+
+              // track click events
+              Genesys("command", "Journey.trackClickEvents", {
+                clickEvents: [
+                    {
+                      selector: "#search-button",
+                      eventName: "search_button_clicked",
+                      customAttributes: {
+                        searchValue: "bueno bonito barato"
+                      }
+                    },
+                ]
+              });
+
             });
           </script>
           
@@ -85,7 +99,7 @@
                 <h2>Barra lateral</h2>
                 <form>
                     <input type="text">
-                    <input type="submit" value="Buscar">
+                    <input type="submit" id="search-button" value="Buscar">
                 </form>
             </aside>
 
