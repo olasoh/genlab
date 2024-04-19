@@ -22,14 +22,16 @@
           <script type="text/javascript" charset="utf-8">
             Genesys("subscribe", "Journey.ready", function() {
               // track forms
-              Genesys("command", "Journey.formsTrack", {});
+              Genesys("command", "Journey.formsTrack", {
+                selector: "#search-form",
+                formName: "search form",
+                captureFormDataOnAbandon: true,
+                customAttributes: { isVip: true }
+              });
           
               // track user inactivity
               Genesys("command", "Journey.trackIdleEvents", { idleEvents: [{ idleAfterSeconds: 60, eventName: "idle_1_minute" }] });
           
-              // track scroll depth
-              Genesys("command", "Journey.trackScrollDepth", { scrollDepthEvents: [{ percentage: 50, eventName: "scrolled_50_percent" }] });
-
               // track click events
               Genesys("command", "Journey.trackClickEvents", {
                 clickEvents: [
@@ -97,8 +99,8 @@
 
             <aside>
                 <h2>Barra lateral</h2>
-                <form>
-                    <input type="text">
+                <form id="search-form" name="formSearch">
+                    <input type="text" name="querySearch">
                     <input type="submit" id="search-button" value="Buscar">
                 </form>
             </aside>
