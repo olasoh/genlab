@@ -45,7 +45,7 @@ nav ul li{
     float: left;
     width: calc(80% - 20px);
     background: green;
-    min-height: 500px;
+    min-height: 1000px;
     padding: 10px;
 }
 
@@ -65,7 +65,7 @@ aside{
     float: left;
     width: calc(20% - 20px);
     background: orange;
-    min-height: 500px;
+    min-height: 1000px;
     padding: 10px;
 }
 
