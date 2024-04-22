@@ -22,12 +22,7 @@
           <script type="text/javascript" charset="utf-8">
             Genesys("subscribe", "Journey.ready", function() {
               // track forms
-              Genesys("command", "Journey.formsTrack", {
-                selector: "#search-form",
-                formName: "search form",
-                captureFormDataOnAbandon: true,
-                customAttributes: { isVip: true }
-              });
+              Genesys("command", "Journey.formsTrack", {});
           
               // track user inactivity
               Genesys("command", "Journey.trackIdleEvents", { idleEvents: [{ idleAfterSeconds: 60, eventName: "idle_1_minute" }] });
