@@ -16,7 +16,7 @@
               ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
             })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
               environment: 'prod',
-              deploymentId: '3097baf1-380d-49dd-8c75-56fef2544b0f'
+              deploymentId: '5bcbb45a-4a66-410d-af1e-c82d01e77d0c'
             });
           </script>
           <script type="text/javascript" charset="utf-8">
@@ -25,21 +25,8 @@
               Genesys("command", "Journey.formsTrack", {});
           
               // track user inactivity
-              Genesys("command", "Journey.trackIdleEvents", { idleEvents: [{ idleAfterSeconds: 60, eventName: "idle_1_minute" }] });
+              Genesys("command", "Journey.trackIdleEvents", { idleEvents: [{ idleAfterSeconds: 60, eventName: "idle_60s" }] });
           
-              // track click events
-              Genesys("command", "Journey.trackClickEvents", {
-                clickEvents: [
-                    {
-                      selector: "#search-button",
-                      eventName: "search_button_clicked",
-                      customAttributes: {
-                        searchValue: "bueno bonito barato"
-                      }
-                    },
-                ]
-              });
-
             });
           </script>
           
