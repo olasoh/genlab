@@ -16,18 +16,10 @@
               ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
             })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
               environment: 'prod',
+              // latamps deploymentId: '3097baf1-380d-49dd-8c75-56fef2544b0f'
               // assistcard qa deploymentId: '5bcbb45a-4a66-410d-af1e-c82d01e77d0c'
-              deploymentId: '3097baf1-380d-49dd-8c75-56fef2544b0f'
-            });
-          </script>
-          <script type="text/javascript" charset="utf-8">
-            Genesys("subscribe", "Journey.ready", function() {
-              // track forms
-              Genesys("command", "Journey.formsTrack", {});
-          
-              // track user inactivity
-              Genesys("command", "Journey.trackIdleEvents", { idleEvents: [{ idleAfterSeconds: 60, eventName: "idle_60s" }] });
-          
+              // bcp deploymentId: '52ff65e1-95ad-482f-827b-adb4530a09a7'
+              deploymentId: '52ff65e1-95ad-482f-827b-adb4530a09a7'
             });
           </script>
           
